@@ -1,0 +1,47 @@
+server:
+  #  servlet:
+  #    context-path: /api
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: bjtu2024
+    url: jdbc:mysql://39.106.39.209:3306/warehouse?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+  data:
+    redis:
+      port: 6379
+      host: 39.106.39.209
+
+
+jwt:
+  secret: 1234567890123456
+  expirationTime: 900
+  issuer: springboot3-security
+  header: Authorization
+  tokenHead: Bearer
+
+# 配置swagger文档的访问路径，访问地址：http://127.0.0.1:8080/swagger-ui.html
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+# Logger Config
+#logging:
+#  level:
+#    root: INFO
+#    com.java.warehousemanagementsystem: INFO
+#    com.java.warehousemanagementsystem.controller: INFO
+#    com.java.warehousemanagementsystem.service: INFO
+#  file:
+#    name: log/warehouse.log
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#
+logging:
+  config: classpath:logback.xml
+
